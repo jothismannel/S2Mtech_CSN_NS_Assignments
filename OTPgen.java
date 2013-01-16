@@ -17,7 +17,7 @@ public class OTPgen {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		int START = 0;
+		int START = 0,length;
 		int END = 9;
 
 		Random random = new Random();					//generate random numbers
@@ -33,6 +33,7 @@ public class OTPgen {
 			BufferedReader br_mesg = new BufferedReader(new FileReader(
 					"/home/jothis/JMR/NetworkSecurity/otptext"));
 			mesg = br_mesg.readLine();					//reading message from file
+			length=mesg.length();
 		} //end of try
 		catch (FileNotFoundException e1) 
 		{
@@ -46,7 +47,7 @@ public class OTPgen {
 		}//end of catch
 
 		/*generating random numbers */
-		for (int idx = 1; idx <= 10; ++idx) 
+		for (int idx = 1; idx <= length; ++idx) 
 		{
 
 			long range = (long) END - (long) START + 1;
