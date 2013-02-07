@@ -1,6 +1,10 @@
+;Assembly program to convert celsius to fahrenhiet and vice versa
+
+
+
 section .data
 
-  msg1: db "Enter the choice",10,0
+  	msg1: db "Enter the choice",10,0
 	 msg2: db "1 celsius to fahrenhiet",10,0
 	 msg3: db "2 fahernhiet to celsius",10,0
 	 msg6: db "Enter the celsius",10,0
@@ -19,23 +23,23 @@ section .text
 	extern scanf
 	global main
 	main:
-		push ebp
+		push ebp;saving base pointer
 		mov ebp,esp
 		
 		push msg1
-		call printf
+		call printf ;calling printf
 
 		push msg2
-                call printf
+                call printf;calling printf
 		
 		push msg3
-                call printf
+                call printf;calling printf
 
 		push DWORD choice ;reading choice
 		push msg4
-		call scanf
+		call scanf;calling scanf
 
-		mov eax,[choice]
+		mov eax,[choice];moving choice to eax register
 		cmp eax,1   ;check if choice 1
 		je .choice1
 		
