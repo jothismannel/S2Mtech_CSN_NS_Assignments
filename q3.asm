@@ -30,7 +30,7 @@ main:
 
         .label:
                 push msg1;
-                call printf; display the persin is eligible
+                call printf; display the person is eligible
                 jmp .done
 
         .done:
